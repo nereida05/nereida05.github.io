@@ -1,0 +1,297 @@
+body {
+  background-color:rgb(230, 230, 230);
+  font-family: Arial, sans-serif;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  background-color: #eee;
+}
+
+.tabButton {
+  padding: 0.5em 1em;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.tabbutton:hover {
+  background-color: #ccc;
+}
+
+#dataTableContainer {
+  width: 100%;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #ccc;
+ }
+
+ #dataTableContainer::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 50%;
+ }
+
+.tab {
+    display: none;
+    padding: 1em;
+}
+
+#uploadButtons {
+  display: inline;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#uploadButtons label.btn,
+#uploadButtons button.btn {
+  background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#uploadButtons label.btn {
+  background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#uploadButtons label.btn:hover {
+  background-color: darkgrey;
+}
+
+#uploadButtons button.btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#uploadButtons button.btn:hover {
+  background-color: darkgrey;
+}
+
+#csvTable {
+  background-color: #c5c5c5;;
+  display: none;
+  border-collapse: collapse;
+  width: 70%;
+  margin: 20px auto;
+}
+
+#csvTable th, #csvTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#csvTable th {
+  background-color: #ffffff;
+}
+
+#editTab{
+  margin-top: 70px;
+  margin-left: 10px;
+  position: relative;
+}
+
+#existingDataTable {
+  flex: 1;
+}
+
+#existingDataTable th,
+#existingDataTable td {
+  border: 1px solid #c5c5c5;
+  padding: 8px;
+  text-align: left;
+  background-color: #c5c5c5;
+}
+
+#existingDataTable th {
+  background-color: #fff;
+}
+
+#studentInputContainer {
+  flex: 1;
+ padding: 20px;
+}
+
+#studentInputContainer input {
+  width: 300px; /* Измените значение по вашему усмотрению */
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#studentInputContainer label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #c5c5c5;;
+}
+
+#studentInputContainer input {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#addStudentBtn {
+  margin-top: 10px;
+  margin-left: 90px;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#addStudentBtn:hover {
+  background-color: darkgrey;
+  transition: 0.5s;
+}
+
+#applyChangesBtn {
+  margin-top: 15px;
+  margin-left: 73px;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+#applyChangesBtn:hover {
+  background-color: darkgrey;
+  transition: 0.5s;
+}
+
+
+#statsTable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+ #graphTab {
+  display: block;
+  margin-top: 15%;
+  width: 80%;
+  height: 30%;
+ }
+
+#statsTable th, #statsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#statsTable th {
+  background-color: #f5f5f5;;
+}
+
+#statsTableBody{
+  background-color: #c5c5c5;
+}
+
+#myChart{
+  display: flex;
+  margin-top: -150px;
+  background-color: #fff;
+}
+
+.tab11 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 15px;
+  width: 95%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #777;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn-black:hover {
+    background-color: darkgrey;
+}
