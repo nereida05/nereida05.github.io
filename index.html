@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курсовая работа</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+      
+<body>
+  <div class="tabs">
+    <div class="tabButton" onclick="openTab('uploadTab')">Загрузить файл</div>
+    <div class="tabButton" onclick="openTab('editTab')">Изменение журнала</div>
+    <div class="tabButton" onclick="openTab('statsTab')">Посмотреть таблицу</div>
+    <div class="tabButton" onclick="openTab('graphTab')">Посмотреть график</div>
+    <div class="tabButton" onclick="openTab('helpTab')">Помощь по программе</div>
+    <div class="tabButton" onclick="openTab('devTab')">Обо мне</div>
+  </div>
+
+  <div id="uploadTab" class="tab">
+    <div id="uploadButtons" class="file-upload"></div>
+    <!-- Таблица для отображения данных -->
+    <table id="csvTable">
+      <thead id="csvTableHead">
+        <tr>
+          <th>Имя</th>
+          <th>Класс</th>
+          <th>Информатика</th>
+          <th>Физика</th>
+          <th>Математика</th>
+          <th>Литература</th>
+          <th>Музыка</th>
+        </tr>
+      </thead>
+      <tbody id="csvTableBody"></tbody>
+    </table>
+  </div>
+
+  <div id="editTab" class="tab">
+    <div class="dataTableContainer">
+      <table id="existingDataTable">
+        <thead>
+          <tr>
+            <th>Имя</th>
+            <th>Класс</th>
+            <th>Информатика</th>
+            <th>Физика</th>
+            <th>Математика</th>
+            <th>Литература</th>
+            <th>Музыка</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody id="existingDataBody"></tbody>
+      </table>
+    </div>
+    <div id="studentInputContainer">
+      <label for="studentName">ФИО:</label>
+      <input type="text" id="studentName">
+  
+      <label for="studentClass">Класс:</label>
+      <input type="text" id="studentClass">
+  
+      <label for="informaticsGrade">Информатика:</label>
+      <input type="text" id="informaticsGrade">
+      
+      <label for="physicsGrade">Физика:</label>
+      <input type="text" id="physicsGrade">
+      <br>
+      <label for="mathGrade">Математика:</label>
+      <input type="text" id="mathGrade">
+  
+      <label for="literatureGrade">Литература:</label>
+      <input type="text" id="literatureGrade">
+  
+      <label for="musicGrade">Музыка:</label>
+      <input type="text" id="musicGrade">
+      <!-- Добавьте аналогичные поля для других предметов -->
+  
+      <button class="btn-black"  id="addStudentBtn" onclick="addStudent()">Добавить</button>
+      <!-- Кнопка "Применить изменения" -->
+      <button id="applyChangesBtn" onclick="applyChanges()">Сохранить</button>
+      <button class="btn-black"  id="downloadBtn" onclick="chooseAndDownloadFormat()">Скачать</button>
+      
+
+    </div>
+  </div>
+
+  <div id="statsTab" class="tab">
+    <!-- Таблица для отображения статистики -->
+    <table id="statsTable">
+      <thead>
+        <tr>
+          <th>Класс</th>
+          <th>Предмет</th>
+          <th>Средняя оценка</th>
+          <th>Медиана</th>
+          <th>Кол-во учеников "2"</th>
+          <th>Кол-во учеников "3"</th>
+          <th>Кол-во учеников "4"</th>
+          <th>Кол-во учеников "5"</th>
+          <th>Процент учеников "2"</th>
+          <th>Процент учеников "3"</th>
+          <th>Процент учеников "4"</th>
+          <th>Процент учеников "5"</th>
+        </tr>
+      </thead>
+      <tbody id="statsTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="graph-container">
+    <div id="graphTab" class="tab">
+      <canvas id="myChart" style="width: 100%; height: auto;">
+      </canvas>
+    </div>
+  </div>
+
+  <div id="helpTab" class="tab">
+    <div class="tab11">
+      <h2>Навигация и помощь</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Загрузить файл"</h5>
+                    <p class="card-text">Для загрузки файла нажмите на кнопку "Выберите файл". Откроется окно выбора файла, выбираете нужный файл в формате .csv, нажимаете "ОК", после которого начинается загрузка файла и загружается таблица.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Создать журнал"</h5>
+                    <p class="card-text">Введите необходимые данные для каждого столбца таблицы. Для добавления нажмите "Добавить". Для удаления - "Удалить". Чтобы сохранить таблицу в формате .csv, нажмите сохранить.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Посмотреть таблицу"</h5>
+                    <p class="card-text">Чтобы посмотреть таблицу вам необходимо сначала загрузить файл с данными. После загрузки файла таблица автоматически загружается.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Посмотреть"</h5>
+                    <p class="card-text">Чтобы построить график, необходимо убедиться что вы загрузили таблицу, после загрузки таблицы вы можете нажать кнопку "Построить график" после которого вам выведется график.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Помощь по программе"</h5>
+                    <p class="card-text">В данном разделе содержится полезная информация по навигации и использования программы для пользователя.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Вкладка "Обо мне"</h5>
+                    <p class="card-text">Здесь содержится информация о разработчике и контактные данные.</p>
+                </div>
+            </div>
+    </div>
+  </div>
+
+  <div id="devTab" class="tab">
+    <div>
+      <ul>
+        <li><h3>ФИО: Сарыглар Чимис Чигжитовна</h3></li>
+        <li><h3>ВУЗ: Сибирский государственный университет информатики и телекоммуникаций</h3></li>
+        <li><h3>Группа: АБ-109</h3></li>
+    </ul>
+    <h3>Данные для связи</h3>
+    <p><a href="mailto: chimissaryglar@gmail.com" style="color: black; font-size: x-large;">E-mail: chimissaryglar@gmail.com</a></p>
+    <p><img src="./1f425.png"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
