@@ -57,7 +57,6 @@ function createUploadButtons() {
   uploadButtonsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых элементов
   uploadButtonsContainer.appendChild(chooseFileBtn);
   uploadButtonsContainer.appendChild(fileInput);
-  uploadButtonsContainer.appendChild(uploadFileBtn);
 }
 
 function createButton(elementType, className, textContent, clickHandler) {
@@ -89,6 +88,7 @@ function fileSelected() {
 
   // Установка имени файла на кастомной кнопке
   chooseFileBtn.textContent = fileName || 'Выберите файл';
+  loadCSV();
 }
 
 function loadCSV() {
