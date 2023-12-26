@@ -902,71 +902,61 @@ function parseTableDataForGraph() {
       {
         label: 'Средняя оценка',
         data: [], // Массив для средних оценок
-        backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        borderColor: 'rgba(255, 0, 0, 1)',
+        backgroundColor: 'rgba(255, 0, 0)',
         borderWidth: 1,
       },
       {
         label: 'Медиана',
         data: [], // Массив для медиан
-        backgroundColor: 'rgba(0, 255, 0, 0.2)',
-        borderColor: 'rgba(0, 255, 0, 1)',
+        backgroundColor: 'rgba(0, 255, 0)',
         borderWidth: 1,
       },
       {
         label: 'С оценкой 2',
         data: [], // Массив для данных по количеству учеников с оценкой 2
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132)',
         borderWidth: 1,
       },
       {
         label: 'С оценкой 3',
         data: [], // Массив для данных по количеству учеников с оценкой 3
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235)',
         borderWidth: 1,
       },
       {
         label: 'С оценкой 4',
         data: [], // Массив для данных по количеству учеников с оценкой 4
-        backgroundColor: 'rgba(255, 206, 86, 0.2)',
-        borderColor: 'rgba(255, 206, 86, 1)',
+        backgroundColor: 'rgba(255, 206, 86)',
         borderWidth: 1,
       },
       {
         label: 'С оценкой 5',
         data: [], // Массив для данных по количеству учеников с оценкой 5
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192)',
         borderWidth: 1,
       },
       {
         label: '% с оценкой 2',
         data: [], // Массив для данных по проценту оценки 2
-        backgroundColor: 'rgba(128, 0, 128, 0.2)',
-        borderColor: 'rgba(128, 0, 128, 1)',
+        backgroundColor: 'rgba(128, 0, 128)',
         borderWidth: 1,
       },
       {
         label: '% с оценкой 3',
         data: [], // Массив для данных по проценту оценки 3
-        backgroundColor: 'rgba(0, 0, 255, 0.2)',
-        borderColor: 'rgba(0, 0, 255, 1)',
+        backgroundColor: 'rgba(0, 0, 255)',
         borderWidth: 1,
       },
       {
         label: '% с оценкой 4',
         data: [], // Массив для данных по проценту оценки 4
-        backgroundColor: 'rgba(0, 128, 0, 0.2)',
-        borderColor: 'rgba(0, 128, 0, 1)',
+        backgroundColor: 'rgba(0, 128, 0)',
         borderWidth: 1,
       },
       {
         label: '% с оценкой 5',
         data: [], // Массив для данных по проценту оценки 5
-        backgroundColor: 'rgba(255, 165, 0, 0.2)',
-        borderColor: 'rgba(255, 165, 0, 1)',
+        backgroundColor: 'rgba(255, 165, 0)',
         borderWidth: 1,
       },
     ],
