@@ -50,9 +50,6 @@ function createUploadButtons() {
   const fileInput = createInput('input', 'file', 'fileInput','.csv, .txt, .xls', fileSelected);
   fileInput.style.display = 'none';
 
-  // Создаем кнопку "Загрузить файл .csv"
-  const uploadFileBtn = createButton('button', 'btn', 'Загрузить файл', loadCSV);
-
   // Добавляем кнопки в контейнер
   uploadButtonsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых элементов
   uploadButtonsContainer.appendChild(chooseFileBtn);
