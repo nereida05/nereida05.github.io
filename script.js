@@ -124,7 +124,7 @@ function parseCSVData(csvData, startRow) {
   const rows = csvData.split('\n');
   const dataArray = [];
 
-  for (let i = startRow; i < rows.length; i++) {
+  for (let i = startRow; i < rows.length-3; i++) {
     const columns = rows[i].split(';').map(column => column.trim());
     dataArray.push(columns);
   }
