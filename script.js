@@ -109,10 +109,10 @@ function loadCSV() {
 
       reader.readAsText(file, 'windows-1251');
     } else {
-      alert('Выберите файл формата .csv');
+      alert('Only .csv');
     }
   } else {
-    alert('Выберите файл для загрузки');
+    alert('Choose file');
   }
 }
 
@@ -248,7 +248,6 @@ function applyChanges() {
 
   // Проверка наличия обязательных данных
   if (!studentName || !studentClass || !informaticsGrade || !physicsGrade || !mathGrade || !literatureGrade || !musicGrade) {
-    alert('Введите все обязательные данные');
     return;
   }
 
@@ -281,7 +280,6 @@ function addStudent() {
 
   // Проверка наличия обязательных данных
   if (!studentName || !studentClass || !informaticsGrade || !physicsGrade || !mathGrade || !literatureGrade || !musicGrade) {
-    alert('Введите все обязательные данные');
     return;
   }
 
@@ -289,7 +287,7 @@ function addStudent() {
   const isDuplicate = csvDataArray.some(row => row[0] === studentName && row[1] === studentClass);
 
   if (isDuplicate) {
-    alert('Ученик с таким именем и классом уже существует в таблице');
+    alert('Already exists');
     // Очищаем поля ввода
     clearInputFields();
     return;
@@ -630,7 +628,7 @@ function chooseAndDownloadFormat() {
   if (selectedFormat === "csv" || selectedFormat === "txt" || selectedFormat === "html") {
     downloadTable(selectedFormat);
   } else {
-    alert("Неподдерживаемый формат файла");
+    alert("Not supported (csv,txt)");
   }
 }
 
