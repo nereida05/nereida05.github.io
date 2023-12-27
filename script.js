@@ -202,12 +202,14 @@ function displayExistingData() {
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Удалить';
         deleteButton.addEventListener('click', () => deleteStudent(tr));
+        deleteButton.classList.add('btn-black');
         tdAction.appendChild(deleteButton);
 
         // Добавляем кнопку "Редактировать" в последний столбец "Действия"
         const editButton = document.createElement('button');
-        editButton.textContent = 'Редактировать';
+        editButton.textContent = 'Изменить';
         editButton.addEventListener('click', () => editStudent(dataRow));
+        editButton.classList.add('btn-black');
         tdAction.appendChild(editButton);
 
         tr.appendChild(tdAction);
@@ -375,7 +377,6 @@ function calculateSubjectAverage() {
 
   // Шаг 1: Считываем всех учеников из глобальной переменной
   const allStudents = csvDataArray;
-
   // Шаг 2: Находим все различные классы
   const uniqueClasses = [...new Set(allStudents.map(student => student[1]))];
 
@@ -390,7 +391,6 @@ function calculateSubjectAverage() {
         'Математика': { total: 0, count: 0 },
         'Литература': { total: 0, count: 0 },
         'Музыка': { total: 0, count: 0 },
-        // Добавьте другие предметы
       },
     };
 
@@ -812,7 +812,7 @@ function displayStatsTab() {
         tr.appendChild(tdPercent3);
         tr.appendChild(tdPercent4);
         tr.appendChild(tdPercent5);
-  
+        
         statsTableBody.appendChild(tr);  
       }
     });
